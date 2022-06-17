@@ -1,0 +1,14 @@
+<div id="<%= dom_id comment %>" style="margin-top: 32px;">
+  <p>
+    <strong>Body:</strong>
+    <%= comment.body %>
+  </p>
+
+  <p>
+    <strong>User:</strong>
+    <%= comment.user.name %>
+  </p>
+
+  <%= button_to "Destroy this comment", comment, method: :delete %>
+</div>
+
