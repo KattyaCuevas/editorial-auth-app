@@ -11,6 +11,13 @@
   </head>
 
   <body>
+    <% if current_user %>
+      Hola <%= current_user.email %>
+       | 
+      <%= link_to "Logout", sessions_path, data: { 'turbo-method': :delete } %>
+    <% else %>
+      <%= link_to "Login", new_session_path %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
