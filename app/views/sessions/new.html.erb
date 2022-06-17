@@ -1,0 +1,19 @@
+<% if flash[:error] %>
+  <%= flash[:error] %>
+<% end %>
+
+<%= form_with(url: sessions_path, data: { turbo: false }) do |form| %>
+  <div>
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div>
+    <%= form.label :password, style: "display: block" %>
+    <%= form.text_field :password %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
