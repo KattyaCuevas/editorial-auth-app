@@ -13,4 +13,8 @@ class PostPolicy < ApplicationPolicy
       end
     end
   end
+
+  def create?
+    user.role == "author"
+  end
 end

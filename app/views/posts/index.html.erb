@@ -1,5 +1,9 @@
 <p style="color: green"><%= notice %></p>
 
+<% if policy(@posts).new? %>
+  <%= link_to "New post", new_post_path %>
+<% end %>
+
 <h1>Posts</h1>
 
 <div id="posts">
@@ -10,5 +14,3 @@
     </p>
   <% end %>
 </div>
-
-<%= link_to "New post", new_post_path %>
