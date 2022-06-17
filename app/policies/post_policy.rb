@@ -17,4 +17,10 @@ class PostPolicy < ApplicationPolicy
   def create?
     user.role == "author"
   end
+
+  def update?
+    return true if user.role == "editor"
+
+    record.author_id == user.id
+  end
 end
